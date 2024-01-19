@@ -6,7 +6,7 @@ import { Spinner } from '@/components/ui';
 import { signIn } from 'next-auth/react';
 import { api } from '@/lib/custom-api';
 
-export const SignupForm: React.FC = ({}) => {
+export const SignupForm: React.FC = () => {
   const [userData, setUserData] = useState({
     name: '',
     email: '',

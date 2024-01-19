@@ -1,6 +1,5 @@
 const do_fetch = async (path: string, init?: RequestInit) => {
   const resp = await fetch(path, init);
-  console.log('heyy2');
 
   const json = await resp.json();
 
@@ -29,7 +28,6 @@ export const api = {
 
   async call(path: string, body: ReqBody, method: string = 'POST') {
     const init = { method, body: JSON.stringify(body), headers: json_headers };
-    console.log('heyy');
 
     return do_fetch(path, init);
   },

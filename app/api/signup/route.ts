@@ -23,7 +23,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(user);
   } catch (err) {
     console.log(err);
-
-    return NextResponse.error();
   }
+  return NextResponse.error();
 }
