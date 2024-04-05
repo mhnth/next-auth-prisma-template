@@ -46,33 +46,45 @@ export const SignupForm: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-md rounded-md bg-white p-6">
+    <div className="mx-auto my-auto w-full max-w-sm rounded-md bg-white p-6 shadow-md">
       <form
         method="post"
-        className="form"
+        className="a-form"
         onSubmit={(e) => startTransition(() => onSubmit(e))}
       >
-        <div className="form_input">
+        <div className="a-form_input">
+          <label htmlFor="name" className="a-form_lbl">
+            Name*
+          </label>
           <input
-            className="m_input"
+            id="name"
+            className="a-m_input"
             type="text"
             name="name"
             placeholder="Username"
             onChange={(e) => onInputChange(e)}
           />
         </div>
-        <div className="form_input">
+        <div className="a-form_input">
+          <label htmlFor="email" className="a-form_lbl">
+            E-mail*
+          </label>
           <input
-            className="m_input"
+            id="email"
+            className="a-m_input"
             type="email"
             name="email"
             placeholder="Email"
             onChange={(e) => onInputChange(e)}
           />
         </div>
-        <div className="form_input">
+        <div className="a-form_input">
+          <label htmlFor="password" className="a-form_lbl">
+            Password*
+          </label>
           <input
-            className="m_input"
+            id="password"
+            className="a-m_input"
             type="password"
             name="password"
             placeholder="**********"
@@ -80,14 +92,14 @@ export const SignupForm: React.FC = () => {
           />
         </div>
 
-        {err && <div className="form_err">{err}</div>}
+        {err && <div className="a-form_err">{err}</div>}
 
-        <button type="submit" className="form_btn">
+        <button type="submit" className="a-form_btn">
           {isPending ? <Spinner /> : 'Sign Up'}
         </button>
       </form>
 
-      <div className="form_more">
+      <div className="a-form_more">
         <Link href={'/signin'}>or Sign In</Link>
       </div>
     </div>

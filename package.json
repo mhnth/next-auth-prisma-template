@@ -1,5 +1,5 @@
 {
-  "name": "next-auth-prisma-template",
+  "name": "qltc",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^5.8.0",
+    "@prisma/client": "^5.10.2",
+    "@suspensive/react-query": "^1.26.3",
+    "@tanstack/react-query": "^5.21.7",
     "bcrypt": "^5.1.1",
-    "dotenv": "^16.3.1",
-    "next": "14.0.4",
+    "date-fns": "^3.3.1",
+    "jotai": "^2.6.2",
+    "next": "14.1.0",
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18"

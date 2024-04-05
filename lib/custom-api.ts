@@ -20,14 +20,26 @@ export const api = {
   },
 
   async postForm(path: string, formData: FormData) {
-    return do_fetch(path, {
-      method: 'POST',
-      body: formData,
-    });
+    return fetch(path, {
+      method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
+      body: formData, // a FormData will automatically set the 'Content-Type'
+    })
+      .then((response) => response.json())
+      .catch((error) => console.error(error));
   },
 
-  async call(path: string, body: ReqBody, method: string = 'POST') {
-    const init = { method, body: JSON.stringify(body), headers: json_headers };
+  async call(
+    path: string,
+    body: ReqBody,
+    method: string = 'POST',
+    options?: RequestInit,
+  ) {
+    const init = {
+      method,
+      body: JSON.stringify(body),
+      headers: json_headers,
+      ...options,
+    };
 
     return do_fetch(path, init);
   },

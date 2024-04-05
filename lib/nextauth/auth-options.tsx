@@ -64,7 +64,7 @@ export const Options: NextAuthOptions = {
         'AUTH CALLBACK SESSION:',
         '\nsession: \n',
         session,
-        'token: \n',
+        '\n token: \n',
         token,
         '\n user: \n',
         user,
